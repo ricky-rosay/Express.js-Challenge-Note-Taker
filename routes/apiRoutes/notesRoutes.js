@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { createNewNote, deleteNote } = require('../../lib/notes');
-let { notesArray } = require('../../db/notes');
+let { notesArray } = require('../../db/db');
 
 // adding db instead of notes //
-router.get('/notes', (req, res) => {
+router.get('/db', (req, res) => {
   let results = notesArray;
   res.json(results);
 });
