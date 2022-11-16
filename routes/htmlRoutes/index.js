@@ -1,26 +1,16 @@
+const path = require('path');
 const router = require('express').Router();
-const { createNewNote, deleteNote } = require('../../lib/notes');
-let { notesArray } = require('../../db/notes');
 
-// notes are available at api/notes in JSON 
-router.get('/notes', (req, res) => {
-  let results = notesArray;
-  res.json(results);
+router.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../public/index.html'));
+});
+// adding db instead of notes //
+router.get('/db', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../public/notes.html'));
 });
 
-router.post('/notes', (req, res) => {
-  if(notesArray){
-  req.body.id = notesArray.length.toString();
-  } else 
-  {req.body.id = 0}
-  res.json(createNewNote(req.body, notesArray));
-});
-
-
-router.delete('/notes/:id', async (req, res) => {
-  const { id } = req.params
-  notesArray = await deleteNote(id, notesArray);
-  res.json(notesArray);
+router.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../public/index.html'));
 });
 
 module.exports = router;
