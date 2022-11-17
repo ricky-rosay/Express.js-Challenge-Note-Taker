@@ -6,9 +6,7 @@ Note taking application that uses back end data to save a retieve previous notes
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+https://tranquil-sea-50287.herokuapp.com/
 
 ![](/images/initial_page.png)
 ![](/images/main_page.png)
