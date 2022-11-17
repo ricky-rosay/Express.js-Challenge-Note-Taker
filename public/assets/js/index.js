@@ -34,6 +34,7 @@ const getNotes = () =>
   });
 
 const saveNote = (note) =>
+// changing notes to db //
   fetch('/api/notes', {
     method: 'POST',
     headers: {

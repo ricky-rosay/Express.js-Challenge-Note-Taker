@@ -4,8 +4,8 @@ const router = require('express').Router();
 router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../../public/index.html'));
 });
-// adding db instead of notes //
-router.get('/db', (req, res) => {
+// changed db back to notes //
+router.get('/notes', (req, res) => {
   res.sendFile(path.join(__dirname, '../../public/notes.html'));
 });
 
